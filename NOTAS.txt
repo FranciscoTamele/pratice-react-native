@@ -1,0 +1,2 @@
+Depois de instalar a biblioteca react-native-svg-transformer deve-se ir 
+adicionar uma informacao no arquivo metro-config.js, e a informacao a ser adicionada esta no github da biblioteca
