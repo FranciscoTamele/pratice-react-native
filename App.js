@@ -1,10 +1,8 @@
 import React from "react";
-import Preload from "./src/views/Preload";
-import Signup from "./src/views/Signup";
+import Menu from "./src/views/Menu";
 import SignIn from "./src/views/SignIn";
+import Signup from "./src/views/Signup";
 
-export default ()=>{
-    return (
-        <SignIn/>
-    )
-}
+export default () => {
+    return <Menu />;
+};

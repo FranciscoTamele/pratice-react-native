@@ -1,8 +1,6 @@
-import styled  from 'styled-components'
+import styled from 'styled-components';
 
-export const Texto = styled.Text
-`
-    height:50px;
-    font-size:16px;
-    color:#000;
+export const Texto = styled.Text`
+  font-size: 16px;
+  color: #000;
 `;

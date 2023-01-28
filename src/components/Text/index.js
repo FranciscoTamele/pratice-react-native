@@ -1,25 +1,18 @@
-import React, { View } from 'react-native'
+import React, {View} from 'react-native';
 import styled from 'styled-components';
 
-import { Texto } from './style'
+import {Texto} from './style';
 
-export default (props) => {
+export default props => {
+  if (props.bold) {
+    return <TextBold>{props.value}</TextBold>;
+  }
 
-    if (props.bold) {
-        return (
-            <TextBold>{props.value}</TextBold>
-        )
-    }
-
-    return (
-        <Texto>{props.value}</Texto>
-    )
-
+  return <Texto>{props.value}</Texto>;
 };
 
-const TextBold = styled(Texto)
-`
-    font-weight:bold;
-    margin-left:10px;
-    color:#000
+const TextBold = styled(Texto)`
+  font-weight: bold;
+  margin-left: 10px;
+  color: #000;
 `;
