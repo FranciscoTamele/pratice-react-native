@@ -20,7 +20,7 @@ export const Form = styled.View
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 10px 50px;
+      padding: 10px 45px;
     `;
 
 export const ContainerHeader = styled.View
@@ -30,7 +30,7 @@ export const ContainerHeader = styled.View
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding:8% 50px;
+      padding:8% 45px;
       background:#ed1c39;
     `;
 

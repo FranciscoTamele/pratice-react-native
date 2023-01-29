@@ -8,7 +8,6 @@ import BtnBack from "./../../../assets/arrow-back.svg";
 import IconHome from "./../../../assets/home.svg";
 import IconMinhas from "./../../../assets/message-square.svg";
 import IconMenu from "./../../../assets/menu.svg";
-import ImageButton from "../../components/ImageButton";
 
 import {
     Container,
