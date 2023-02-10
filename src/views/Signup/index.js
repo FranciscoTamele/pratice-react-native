@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { ImageBackground, StyleSheet } from "react-native";
 import Botao from "../../components/Button";
 import Campo from "../../components/Input";
-import { SelectList } from 'react-native-dropdown-select-list';
+import Spinner from "../../components/Spinner";
 
 // Como carregar a biblioteca react-native-svg-transformer para usar arquivos svg basta importar apenas
 import IconEmail from "./../../../assets/email.svg";
@@ -49,7 +49,8 @@ export default () => {
                     <Form>
                         <Campo IconSvg={IconPerson} placeholder={placeholderNome} />
                         <Campo IconSvg={IconEmail} placeholder={placeholderEmail} />
-                        <Campo IconSvg={IconLock}/>
+                        <Spinner/>
+                        <Spinner/>
                         <Campo
                             IconSvg={IconLock}
                             placeholder={placeholderSenha}
