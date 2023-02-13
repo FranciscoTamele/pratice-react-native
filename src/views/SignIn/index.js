@@ -1,9 +1,8 @@
 import React from "react";
-import { ImageBackground, StyleSheet } from "react-native";
+import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
 import Botao from "../../components/Button";
 import Campo from "../../components/Input";
 import Texto from "../../components/Text";
-import styled from "styled-components";
 
 // Como carregar a biblioteca react-native-svg-transformer para usar arquivos svg basta importar apenas
 import Logo from "./../../../assets/ic_mozta.svg";
@@ -24,10 +23,7 @@ import {
 const placeholderEmail = "Insert your email                                ";
 const placeholderSenha = "Insert your password                               ";
 
-export default () => {
-    const onSignIn = () => {
-        console.log("Tentou fazer SignIn !");
-    };
+export default ({navigation}) => {
 
     return (
         <ImageBackground
@@ -44,12 +40,16 @@ export default () => {
                         placeholder={placeholderSenha}
                         password={true}
                     />
-                    <TextoEsqueceu>Forget password?</TextoEsqueceu>
-                    <Botao onPress={onSignIn} value={"Sign In"}/>
+                    <TouchableOpacity style={{alignSelf:"flex-end"}}>
+                        <TextoEsqueceu>Forget password?</TextoEsqueceu>
+                    </TouchableOpacity>
+                    <Botao onPress={()=>navigation.navigate("Menu")} value={"Sign In"}/>
                 </Form>
                 <ViewBottom>
                     <Texto value="Do you have account?" bold={false} />
-                    <Texto value="Create account" bold={true} />
+                    <TouchableOpacity onPress={()=>navigation.navigate("SignUp")}>
+                        <Texto value="Create account" bold={true} />
+                    </TouchableOpacity>
                 </ViewBottom>
             </Container>
         </ImageBackground>

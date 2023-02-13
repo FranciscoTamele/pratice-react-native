@@ -47,6 +47,5 @@ export const TextoEsqueceu = styled.Text`
   font-weight: bold;
   color: #000;
   padding: 5px;
-  align-self: flex-end;
   margin-bottom: 13px;
 `;

@@ -8,6 +8,8 @@ import Spinner from "../../components/Spinner";
 import IconEmail from "./../../../assets/email.svg";
 import IconPerson from "./../../../assets/person.svg";
 import IconLock from "./../../../assets/lock.svg";
+import IconGlobo from './../../../assets/globe.svg';
+import IconLocation from './../../../assets/pin.svg'
 
 import {
     Container,
@@ -49,8 +51,8 @@ export default () => {
                     <Form>
                         <Campo IconSvg={IconPerson} placeholder={placeholderNome} />
                         <Campo IconSvg={IconEmail} placeholder={placeholderEmail} />
-                        <Spinner/>
-                        <Spinner/>
+                        <Spinner IconSvg={IconGlobo} placeholder='Seleciona o país' title="País"/>
+                        <Spinner IconSvg={IconLocation} placeholder="Seleciona provincia" title="Provincia"/>
                         <Campo
                             IconSvg={IconLock}
                             placeholder={placeholderSenha}

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Signup from "./src/views/Signup";
+import MainStack from "./src/stacks/MainStack";
 
 export default () => {
-    return <Signup />;
+    return <MainStack />;
 };

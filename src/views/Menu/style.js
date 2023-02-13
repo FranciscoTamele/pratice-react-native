@@ -56,7 +56,7 @@ export const BtnTouch = styled.TouchableOpacity`
 `;
 
 export const Scroll = styled.ScrollView`
-  background: #ddd1d3;
+  background: #fff;
   margin: 10px 0px;
   border-radius: 10px;
   padding: 10px;

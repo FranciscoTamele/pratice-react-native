@@ -13,7 +13,7 @@ const data = [
     { label: 'Item 8', value: '8' },
 ];
 
-const DropdownComponent = ({IconSvg}) => {
+const DropdownComponent = ({IconSvg, title, placeholder}) => {
 
     const [value, setValue] = useState(null);
     const [isFocus, setIsFocus] = useState(false);
@@ -22,7 +22,7 @@ const DropdownComponent = ({IconSvg}) => {
         if (value || isFocus) {
             return (
                 <Text style={[styles.label, isFocus && { color: '#ed1c39' }]}>
-                    País
+                    {title}
                 </Text>
             );
         }
@@ -43,7 +43,7 @@ const DropdownComponent = ({IconSvg}) => {
                 maxHeight={300}
                 labelField="label"
                 valueField="value"
-                placeholder={!isFocus ? 'Seleciona o país' : '...'}
+                placeholder={!isFocus ? placeholder : '...'}
                 searchPlaceholder="Pesquisar ..."
                 value={value}
                 onFocus={() => setIsFocus(true)}
@@ -53,7 +53,7 @@ const DropdownComponent = ({IconSvg}) => {
                     setIsFocus(false);
                 }}
                 renderLeftIcon={() => (
-                    <IconSvg/>
+                    <IconSvg width="24" height="24" fill="#F3677A" style={{marginRight: 4}}/>
                 )}
             />
         </View>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         borderColor: '#ed1c39',
         borderWidth: 1,
         borderRadius: 8,
-        paddingHorizontal: 8,
+        paddingHorizontal: 5,
     },
     icon: {
         marginRight: 5,
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     },
     placeholderStyle: {
         fontSize: 16,
+        color:"#959595"
     },
     selectedTextStyle: {
         fontSize: 16,
