@@ -2,6 +2,12 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+
+// redux
+import Store from '../reducers/Store'
+import { Provider } from "react-redux";
+
+
 import SignIn from "../views/SignIn";
 import Signup from "../views/Signup";
 import Preload from "../views/Preload";
@@ -11,41 +17,43 @@ const Stack = createNativeStackNavigator();
 export default () => {
 
     return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="SignIn">
+        <Provider store={Store}>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName="SignIn">
 
-                <Stack.Screen
-                    name="Preload"
-                    component={Preload}
-                    options={{
-                        headerShown: false
-                    }}
-                />
+                    <Stack.Screen
+                        name="Preload"
+                        component={Preload}
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
 
-                <Stack.Screen name="SignIn"
-                              component={SignIn}
-                              options={{
-                                  headerShown: false,
-                              }}
-                />
+                    <Stack.Screen name="SignIn"
+                                  component={SignIn}
+                                  options={{
+                                      headerShown: false,
+                                  }}
+                    />
 
-                <Stack.Screen
-                    name="SignUp"
-                    component={Signup}
-                    options={{
-                        headerShown: false
-                    }}
-                />
+                    <Stack.Screen
+                        name="SignUp"
+                        component={Signup}
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
 
-                <Stack.Screen
-                    name="Menu"
-                    component={Menu}
-                    options={{
-                        headerShown:false
-                    }}
-                />
+                    <Stack.Screen
+                        name="Menu"
+                        component={Menu}
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
 
-            </Stack.Navigator>
-        </NavigationContainer>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </Provider>
     );
 }

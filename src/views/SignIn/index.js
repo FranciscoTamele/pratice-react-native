@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
 import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
+
 import Botao from "../../components/Button";
 import Campo from "../../components/Input";
 import Texto from "../../components/Text";
@@ -8,6 +9,10 @@ import Texto from "../../components/Text";
 import Logo from "./../../../assets/ic_mozta.svg";
 import IconPerson from "./../../../assets/email.svg";
 import IconLock from "./../../../assets/lock.svg";
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import {submitSign,logout} from "../../reducers/SignInSlice";
 
 const initback = require("../../../assets/background.jpg");
 
@@ -25,6 +30,23 @@ const placeholderSenha = "Insert your password                               ";
 
 export default ({navigation}) => {
 
+    const [email, setEmail] = useState('');
+
+    /**
+     * Para pegar o estado de um determinado, segue-se abaixo
+     * Porque state.signin? Porque foi o nome da variavel que usou-se no createConfigure
+     * */
+
+    const userState = useSelector(states => states.signin)
+
+    const handleSign = ()=>{
+        console.log(email)
+        dispatch(submitSign("Francisco Tamele"))
+        navigation.navigate("SignUp")
+    }
+
+    const dispatch = useDispatch();
+
     return (
         <ImageBackground
             source={initback}
@@ -34,16 +56,13 @@ export default ({navigation}) => {
                 <Logo width="100%" height="60" />
                 <TitleApp>MozTa</TitleApp>
                 <Form>
-                    <Campo IconSvg={IconPerson} placeholder={placeholderEmail} />
-                    <Campo
-                        IconSvg={IconLock}
-                        placeholder={placeholderSenha}
-                        password={true}
-                    />
+                    <Campo onChangeText={(t)=>setEmail(t)} IconSvg={IconPerson} placeholder={placeholderEmail} />
+                    <Campo onChangeText={(t)=>setEmail(t)} IconSvg={IconLock} placeholder={placeholderSenha} password={true} />
+
                     <TouchableOpacity style={{alignSelf:"flex-end"}}>
                         <TextoEsqueceu>Forget password?</TextoEsqueceu>
                     </TouchableOpacity>
-                    <Botao onPress={()=>navigation.navigate("Menu")} value={"Sign In"}/>
+                    <Botao onPress={handleSign} value={"SignIn"}/>
                 </Form>
                 <ViewBottom>
                     <Texto value="Do you have account?" bold={false} />
