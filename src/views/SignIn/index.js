@@ -40,7 +40,6 @@ export default ({navigation}) => {
     const userState = useSelector(states => states.signin)
 
     const handleSign = ()=>{
-        console.log(email)
         dispatch(submitSign("Francisco Tamele"))
         navigation.navigate("SignUp")
     }

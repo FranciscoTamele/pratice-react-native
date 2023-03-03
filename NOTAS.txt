@@ -1,2 +1,7 @@
-Depois de instalar a biblioteca react-native-svg-transformer deve-se ir 
+Depois de instalar a biblioteca react-native-svg-transformer deve-se ir
 adicionar uma informacao no arquivo metro-config.js, e a informacao a ser adicionada esta no github da biblioteca
+
+- Para obter o width do componente
+<View onLayout={(event) => {
+  var {x, y, width, height} = event.nativeEvent.layout;
+}} />

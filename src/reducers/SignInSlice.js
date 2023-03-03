@@ -14,7 +14,6 @@ export const slice = createSlice({
             user: payload,
             isLogged: true}
         },
-
         logout(state){
 
         }
