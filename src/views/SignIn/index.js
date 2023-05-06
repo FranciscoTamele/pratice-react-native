@@ -36,7 +36,6 @@ export default ({navigation}) => {
      * Para pegar o estado de um determinado, segue-se abaixo
      * Porque state.signin? Porque foi o nome da variavel que usou-se no createConfigure
      * */
-
     const userState = useSelector(states => states.signin)
 
     const handleSign = ()=>{
